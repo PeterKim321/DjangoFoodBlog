@@ -1,7 +1,8 @@
 from django.db.models import Count, Q
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from .models import Post
+from .forms import CommentForm
 
 def search(request):
     queryset = Post.objects.all()
@@ -16,7 +17,7 @@ def search(request):
         context = {
             'request': queryset
         }
-        
+
     return render(request, 'search_results.html', context)
 
 def get_cat_count():
@@ -61,4 +62,25 @@ def blog(request):
     return render(request, 'blog.html', context)
 
 def post(request, id):
-    return render(request, 'post.html', {})
+    post = get_object_or_404(Post, id=id)
+    latest_posts = Post.objects.order_by('-timestamp')[0:3]
+    cat_count = get_cat_count()
+    form = CommentForm(request.POST or None)
+    
+    if request.method == "POST":
+        if form.is_valid():
+            form.instance.user = request.user
+            form.instance.post = post
+            form.save()
+
+            return redirect(reverse("post_detail", kwargs = {
+                'id': post.pk
+            }))
+    context ={
+        'post': post,
+        'form': form,
+        'latest_posts': latest_posts,
+        'cat_count': cat_count
+    }
+
+    return render(request, 'post.html', context)
