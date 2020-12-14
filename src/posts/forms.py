@@ -22,8 +22,12 @@ class CommentForm(forms.ModelForm):
         'class': 'form-control',
         'placeholder': 'Type your comment',
         'id': 'usercomment',
-        'rows': '4',
+        'rows': '4'
     }))
     class Meta:
         model = Comment
         fields = ('content', )
+
+    def __init__(self, *args, **kwargs):
+        super(CommentForm, self).__init__(*args, **kwargs)
+        self.fields['content'].label = ""

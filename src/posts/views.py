@@ -65,7 +65,11 @@ def post(request, id):
     post = get_object_or_404(Post, id=id)
     latest_posts = Post.objects.order_by('-timestamp')[0:3]
     cat_count = get_cat_count()
-    PostView.objects.get_or_create(user=request.user, post=post)
+
+    if request.user.is_authenticated:
+        PostView.objects.get_or_create(user=request.user, post=post)
+    
+    
     form = CommentForm(request.POST or None)
     
     if request.method == "POST":

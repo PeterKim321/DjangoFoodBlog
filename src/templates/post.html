@@ -67,19 +67,20 @@
                 <header>
                   <h3 class="h6">Leave a reply</h3>
                 </header>
-                <form method="POST" action="#" class="commenting-form">
-                  {% csrf_token %}
-
-                  <div class="row">
-                    <div class="form-group col-md-12">
-                      {{ form }}
+                  <form method="POST" action="." class="commenting-form">
+                    {% csrf_token %}
+                    <div class="row">
+                      <div class="form-group col-md-12">
+                        {{ form }}
+                      </div>
+                      <div class="form-group col-md-12">
+                        <button type="submit" class="btn btn-secondary">Submit Comment</button>
+                      </div>
                     </div>
-                    <div class="form-group col-md-12">
-                      <button type="submit" class="btn btn-secondary">Submit Comment</button>
-                    </div>
-                  </div>
-                </form>
+                  </form>
             </div>
+            {% else %}
+              <a href="{% url 'account_login' %}" type="submit" class="btn btn-primary">Login To Comment</a>
             {% endif %}
           </div>
         </div>
