@@ -21,7 +21,9 @@ def search(request):
     return render(request, 'search_results.html', context)
 
 def get_cat_count():
-    queryset = Post.objects.values('categories__title').annotate(Count('categories__title'))
+    queryset = Post.objects \
+        .values('categories__title') \
+        .annotate(Count('categories__title'))
 
     return queryset
 
@@ -37,7 +39,7 @@ def index(request):
     return render(request, 'index.html', context)
 
 def blog(request):
-    post_list = Post.objects.all()
+    post_list = Post.objects.all().order_by('-id')
     latest_posts = Post.objects.order_by('-timestamp')[0:3]
     cat_count = get_cat_count()
     paginator = Paginator(post_list, 4)
@@ -81,6 +83,7 @@ def post(request, id):
             return redirect(reverse("post_detail", kwargs = {
                 'id': post.pk
             }))
+
     context ={
         'post': post,
         'form': form,

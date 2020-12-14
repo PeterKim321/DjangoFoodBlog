@@ -25,7 +25,7 @@ SECRET_KEY = 'w8j!i5&!&2&l5%sn+3h435vu22lr(e@qgtw8t#!1042yz=dl*8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'tinymce',
     'posts',
+
     'django.contrib.sites',
 
     'allauth',

@@ -10,3 +10,9 @@ The basic framework for the Django backend is from the tutorial: https://www.you
 Initial Release (Tutorial + bug fixes and minor url redirections)
 
 ## version 1.1
+- Addition of location in index
+- orderby of post.all query set in models.py
+- fixed few bugs around the code
+- Reformatting of index.html for personal use
+- Reformatting of footer
+- #TODO = Category aggregation, Search Results CSS, Login and Logout CSS
