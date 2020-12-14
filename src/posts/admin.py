@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Author, Category, Post, Comment, models
+from .models import Author, Category, Post, Comment, models, PostView
 from tinymce.widgets import TinyMCE
 
 class TinyMCEAdmin(admin.ModelAdmin):
@@ -11,4 +11,5 @@ class TinyMCEAdmin(admin.ModelAdmin):
 admin.site.register(Author)
 admin.site.register(Category)
 admin.site.register(Comment)
+admin.site.register(PostView)
 admin.site.register(Post, TinyMCEAdmin)

@@ -1,7 +1,7 @@
 from django.db.models import Count, Q
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render, get_object_or_404, redirect, reverse
-from .models import Post
+from .models import Post, PostView
 from .forms import CommentForm
 
 def search(request):
@@ -65,6 +65,7 @@ def post(request, id):
     post = get_object_or_404(Post, id=id)
     latest_posts = Post.objects.order_by('-timestamp')[0:3]
     cat_count = get_cat_count()
+    PostView.objects.get_or_create(user=request.user, post=post)
     form = CommentForm(request.POST or None)
     
     if request.method == "POST":
