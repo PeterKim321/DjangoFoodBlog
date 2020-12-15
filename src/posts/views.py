@@ -4,6 +4,9 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse
 from .models import Post, PostView
 from .forms import CommentForm
 
+def contact(request):
+    return render(request, 'contact.html')
+
 def category_search(request):
     queryset = Post.objects.all()
     query = request.GET.get('query_name')

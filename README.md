@@ -23,4 +23,8 @@ Initial Release (Tutorial + bug fixes and minor url redirections)
 - Search required added, can't search for none or empty string
 - Forced allauth to redirect to templates under ./account/login.html, logout.html, and signup.html.
 - Added Login and Logout in navbar
-- #TODO set standard for image size for thumbnail, add images to index gallery, Start MAKING CONTENT!, add contact html page
+- added heart to footer &#10084;&#65039;
+- #TODO a̶d̶d̶ c̶o̶n̶t̶a̶c̶t̶ h̶t̶m̶l̶ p̶a̶g̶e̶
+
+## version 1.3
+- #TODO - add rating to post model, test standard image size for thumbnail, deploy project
