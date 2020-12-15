@@ -15,7 +15,7 @@ Initial Release (Tutorial + bug fixes and minor url redirections)
 - fixed few bugs around the code
 - Reformatting of index.html for personal use
 - Reformatting of footer
-- #TODO = Category aggregation, S̶e̶a̶r̶c̶h̶ R̶e̶s̶u̶l̶t̶s̶ C̶S̶S̶,̶ L̶o̶g̶i̶n̶ a̶n̶d̶ L̶o̶g̶o̶u̶t̶ C̶S̶S̶
+- #TODO = C̶a̶t̶e̶g̶o̶r̶y̶ a̶g̶g̶r̶e̶g̶a̶t̶i̶o̶n̶, S̶e̶a̶r̶c̶h̶ R̶e̶s̶u̶l̶t̶s̶ C̶S̶S̶,̶ L̶o̶g̶i̶n̶ a̶n̶d̶ L̶o̶g̶o̶u̶t̶ C̶S̶S̶
 
 ## version 1.2
 - Addition of search results css

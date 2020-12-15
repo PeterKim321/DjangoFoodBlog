@@ -4,6 +4,39 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse
 from .models import Post, PostView
 from .forms import CommentForm
 
+def category_search(request):
+    queryset = Post.objects.all()
+    query = request.GET.get('query_name')
+    latest_posts = Post.objects.order_by('-timestamp')[0:3]
+    cat_count = get_cat_count()
+
+    if query:
+        queryset = queryset.filter(
+            categories__title=query
+        ).distinct()
+
+    paginator = Paginator(queryset, 4)
+    page_request_var = 'page'
+    page = request.GET.get(page_request_var)
+
+    try:
+        paginated_queryset = paginator.page(page)
+    except PageNotAnInteger:
+        paginated_queryset = paginator.page(1)
+    except EmptyPage:
+        paginated_queryset = paginator.page(paginator.num_pages)
+
+    context = {
+        'request': paginated_queryset,
+        'page_request_var': page_request_var,
+        'query': query,
+        'latest_posts': latest_posts,
+        'cat_count': cat_count
+    }
+    
+    return render(request, 'search_results.html', context)
+
+
 def search(request):
     queryset = Post.objects.all()
     query = request.GET.get('q')

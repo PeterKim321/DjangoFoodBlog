@@ -38,7 +38,7 @@
         </header>
         {% for cat in cat_count %}
           <div class="item d-flex justify-content-between">
-            <a href="#">{{ cat.categories__title }}</a>
+            <a name="category_search" href="/category_search?query_name={{ cat.categories__title | urlencode }}">{{ cat.categories__title }}</a>
             <span>{{ cat.categories__title__count}}</span>
           </div>
         {% endfor %}
