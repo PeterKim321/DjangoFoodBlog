@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  </br>
+    <div class="d-flex">
+      <a href="/accounts/login/" style="padding-right: 20px;">Login</a>
+      <a href="/accounts/signup/">Sign Up</a>
+    </div>
+  </br>
+  
+  <h2 style="padding-bottom: 10px">Login</h2>
+  <h6 style="padding-top: 10px;padding-bottom: 10px"> If you have not created an account yet, please <a href="/accounts/signup/">Sign Up</a>. </h6>
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Login</button>
+  </form>
+  </br>
+{% endblock %}
