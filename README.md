@@ -27,4 +27,4 @@ Initial Release (Tutorial + bug fixes and minor url redirections)
 - #TODO a̶d̶d̶ c̶o̶n̶t̶a̶c̶t̶ h̶t̶m̶l̶ p̶a̶g̶e̶
 
 ## version 1.3
-- #TODO - add rating to post model, test standard image size for thumbnail, deploy project
+- #TODO - a̶d̶d̶ r̶a̶t̶i̶n̶g̶ t̶o̶ p̶o̶s̶t̶ m̶o̶d̶e̶l̶, test standard image size for thumbnail, deploy project
