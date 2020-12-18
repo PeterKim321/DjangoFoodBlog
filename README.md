@@ -1,7 +1,8 @@
 # DjangoFoodBlog
 
 The front end is a template sourced online, please see readme.txt in folder 'code' for source.
-The project adds additional functionalities through the use of Python's Django framework.
+
+This project adds additional functionalities in the backend (Django), extending functionality and adapting it for a personal food blog through the use of Python's Django framework.
 
 The basic framework for the Django backend is from the tutorial: https://www.youtube.com/watch?v=HWg3zXWwre8. The blog has been edited and extended for personal use.
 
