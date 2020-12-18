@@ -42,4 +42,4 @@ Initial Release (Tutorial + bug fixes and minor url redirections)
 ## Note
 - Yes I realise that I leaked the SECRET_KEY in my past commits, and yes I have tried to remove it using bfg or git-filter, which to my detrement DID NOT WORK. Therefore, the project has been reconfigured with a new SECRET_KEY and the old SECRET_KEY will not compromise the security of the project.
 
-@Future_Employers &#10084;&#65039
+@Future_Employers &#10084; &#65039;
