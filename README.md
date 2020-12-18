@@ -28,4 +28,15 @@ Initial Release (Tutorial + bug fixes and minor url redirections)
 - #TODO a̶d̶d̶ c̶o̶n̶t̶a̶c̶t̶ h̶t̶m̶l̶ p̶a̶g̶e̶
 
 ## version 1.3
-- #TODO - a̶d̶d̶ r̶a̶t̶i̶n̶g̶ t̶o̶ p̶o̶s̶t̶ m̶o̶d̶e̶l̶, test standard image size for thumbnail, deploy project
+- Removed secret key for deployment purposes
+- Added Alias for media file in apache config
+- Standard thumbnail size 640 x 426 px
+- Ready for production publication
+- #TODO - a̶d̶d̶ r̶a̶t̶i̶n̶g̶ t̶o̶ p̶o̶s̶t̶ m̶o̶d̶e̶l̶, t̶e̶s̶t̶ s̶t̶a̶n̶d̶a̶r̶d̶ i̶m̶a̶g̶e̶ s̶i̶z̶e̶ f̶o̶r̶ t̶h̶u̶m̶b̶n̶a̶i̶l̶,̶ d̶e̶p̶l̶o̶y̶ p̶r̶o̶j̶e̶c̶t̶
+
+## Extentions TODO
+- Search by Location around Sydney (Interactive map + search by geo tag)
+- Overall ranking of all restaurants visited (By score)
+- Image gallery under every post (For extra pictures that is out of context of post)
+
+@Future_Employers &#10084;&#65039
