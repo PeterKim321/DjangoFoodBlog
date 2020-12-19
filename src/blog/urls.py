@@ -6,7 +6,7 @@ from django.urls import path, include
 from posts.views import index, blog, post, search, category_search, contact
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('adminconfigdashboard/', admin.site.urls),
     path('', index),
     path('blog/', blog, name='post_list'),
     path('post/<id>', post, name = 'post_detail'),
