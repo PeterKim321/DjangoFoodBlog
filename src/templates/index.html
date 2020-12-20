@@ -50,7 +50,7 @@
             <header class="post-header">
               <div class="category">
                 {% for cat in post.categories.all %}
-                  <a href="#"> {{ cat }} </a> 
+                  <a href="/category_search?query_name={{ cat.categories__title | urlencode }}"> {{ cat }} </a> 
                 {% endfor %}
               </div>
               <a href="{{ post.post_url }}">
@@ -58,7 +58,7 @@
               </a>
             </header>
             <p> {{post.overview }} </p>
-            <footer class="post-footer d-flex align-items-center"><a href="#" class="author d-flex align-items-center flex-wrap">
+            <footer class="post-footer d-flex align-items-center"><a href="/category_search?query_name={{ cat.categories__title | urlencode }}" class="author d-flex align-items-center flex-wrap">
                 <div class="avatar"><img src="{{post.author.profile_picture.url}}" alt="..." class="img-fluid"></div>
                 <div class="title"><span>{{ post.author }}</span></div></a>
               <div class="date"><i class="icon-clock"></i> {{ post.timestamp | timesince }} ago </div>
@@ -102,11 +102,11 @@
             <div class="date"> {{ post.timestamp }} </div>
             <div class="category">
               {% for cat in post.categories.all %}
-                <a href="#"> {{cat}} </a>
+                <a href="/category_search?query_name={{ cat.categories__title | urlencode }}"> {{cat}} </a>
               {% endfor %}
             </div>
           </div>
-            <a href="#">
+            <a href="/category_search?query_name={{ cat.categories__title | urlencode }}">
             <h3 class="h4"> {{ post.title }} </h3></a>
           <p class="text-muted"> {{ post.overview}} </p>
         </div>
