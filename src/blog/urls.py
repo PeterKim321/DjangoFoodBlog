@@ -5,8 +5,10 @@ from django.urls import path, include
 
 from posts.views import index, blog, post, search, category_search, contact
 
+from decouple import config
+
 urlpatterns = [
-    path('adminconfigdashboard/', admin.site.urls),
+    path(config('ADMIN_URL'), admin.site.urls),
     path('', index),
     path('blog/', blog, name='post_list'),
     path('post/<id>', post, name = 'post_detail'),
@@ -22,3 +24,6 @@ urlpatterns = [
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+if settings:
+    print(config('ADMIN_URL'))
