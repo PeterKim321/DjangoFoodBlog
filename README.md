@@ -39,6 +39,32 @@ Initial Release (Tutorial + bug fixes and minor url redirections)
 - Overall ranking of all restaurants visited (By score)
 - Image gallery under every post (For extra pictures that is out of context of post)
 
+## SetUp
+- Spin up a fresh instance of aws ec2 instance and ssh into it
+- create folder 'django' at ~
+- cd into 'django' and clone the project
+```
+git clone https://github.com/<username>/<repo>.git
+```
+- create virtual env (may have to install python3 virtualenv) through command
+```
+python3 -m venv venv
+source venv/bin/activate
+```
+- install dependencies (requirements.txt)
+```
+pip install -r requirements.txt
+```
+- migrate and make migrations
+```
+python3 manage.py migrate && python3 manage.py makemigrations
+```
+- runserver
+```
+python3 manage.py runserver
+```
+- Additional: For users to access your website whilst your server is not running in local host, you must install either apache2 or nginx and gunicorn to create your webserver. The steps to do this can be found online.
+
 ## Note
 - Yes I realise that I leaked the SECRET_KEY in my past commits, and yes I have tried to remove it using bfg or git-filter, which to my detrement DID NOT WORK. Therefore, the project has been reconfigured with a new SECRET_KEY and the old SECRET_KEY will not compromise the security of the project.
 
