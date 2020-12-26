@@ -1,7 +1,7 @@
 from django.db.models import Count, Q
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render, get_object_or_404, redirect, reverse
-from .models import Post, PostView
+from .models import Post, PostView, PostImage
 from .forms import CommentForm
 
 def contact(request):
@@ -118,6 +118,7 @@ def blog(request):
 
 def post(request, id):
     post = get_object_or_404(Post, id=id)
+    photos = PostImage.objects.filter(post=post)
     latest_posts = Post.objects.order_by('-timestamp')[0:3]
     cat_count = get_cat_count()
 
@@ -139,6 +140,7 @@ def post(request, id):
 
     context ={
         'post': post,
+        'photos': photos,
         'form': form,
         'latest_posts': latest_posts,
         'cat_count': cat_count
