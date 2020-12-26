@@ -4,6 +4,8 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse
 from .models import Post, PostView, PostImage
 from .forms import CommentForm
 
+import folium
+
 def contact(request):
     return render(request, 'contact.html')
 
@@ -147,3 +149,22 @@ def post(request, id):
     }
 
     return render(request, 'post.html', context)
+    
+def map(request):
+    loc_list = Post.objects.all().filter(announcement=False)
+        
+    m = folium.Map([-33.865143, 151.209900], zoom_start=12)
+
+    for post in loc_list:
+        marker = folium.Html(post.restaurant_name, script=True)
+        popup = folium.Popup(marker, max_width=2650)
+        folium.Marker(location=[post.latitude, post.longitude], popup=popup).add_to(m)
+    
+    m = m._repr_html_() #updated
+
+    context = {
+        "map" : m,
+        "loc" : loc_list,
+    }
+
+    return render(request, 'map.html', context)

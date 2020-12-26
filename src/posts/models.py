@@ -38,6 +38,7 @@ class Comment(models.Model):
 
 class Post(models.Model):
     title = models.CharField(max_length=100)
+    restaurant_name = models.TextField()
     overview = models.TextField()
     food_rating = models.DecimalField(max_digits=3, decimal_places=1)
     atmosphere_rating = models.DecimalField(max_digits=3, decimal_places=1)
@@ -45,8 +46,8 @@ class Post(models.Model):
     content = HTMLField()
     timestamp = models.DateTimeField(auto_now_add = True)
     location = models.TextField(default = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d424146.1026392451!2d150.65179666970943!3d-33.847356724710885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b129838f39a743f%3A0x3017d681632a850!2sSydney%20NSW!5e0!3m2!1sen!2sau!4v1607782680258!5m2!1sen!2sau") # Map of Sydney
-    latitude = models.DecimalField(max_digits=11, decimal_places=8, default=-33.865143)
-    longitude = models.DecimalField(max_digits=12, decimal_places=8, default=151.209900)
+    latitude = models.DecimalField(max_digits=17, decimal_places=14, default=-33.865143)
+    longitude = models.DecimalField(max_digits=18, decimal_places=14, default=151.209900)
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     thumbnail = models.ImageField()
     categories = models.ManyToManyField(Category)
