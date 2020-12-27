@@ -35,6 +35,12 @@ Initial Release (Tutorial + bug fixes and minor url redirections)
 - #TODO - a̶d̶d̶ r̶a̶t̶i̶n̶g̶ t̶o̶ p̶o̶s̶t̶ m̶o̶d̶e̶l̶, t̶e̶s̶t̶ s̶t̶a̶n̶d̶a̶r̶d̶ i̶m̶a̶g̶e̶ s̶i̶z̶e̶ f̶o̶r̶ t̶h̶u̶m̶b̶n̶a̶i̶l̶,̶ d̶e̶p̶l̶o̶y̶ p̶r̶o̶j̶e̶c̶t̶
 
 ## Extentions TODO
+## version 1.4
+- Added interactive map to consolidate the location of all posts
+- Added Image gallery for each post (For excess images)
+- Updated models for Post (To accomodate new changes)
+- Updated Security settings
+
 - Search by Location around Sydney (Interactive map + search by geo tag)
 - Overall ranking of all restaurants visited (By score)
 - Image gallery under every post (For extra pictures that is out of context of post)
