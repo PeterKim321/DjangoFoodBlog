@@ -27,6 +27,7 @@ DEBUG = config('DEBUG', cast = bool)
 
 ALLOWED_HOSTS = ['.whathefood.xyz']
 
+X_FRAME_OPTIONS = config('X_FRAME_OPTIONS')
 
 # Application definition
 
