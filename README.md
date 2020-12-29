@@ -1,4 +1,4 @@
-# DjangoFoodBlog
+ngoFoodBlog
 
 The front end is a template sourced online, please see readme.txt in folder 'code' for source.
 
@@ -34,16 +34,16 @@ Initial Release (Tutorial + bug fixes and minor url redirections)
 - Ready for production publication
 - #TODO - a̶d̶d̶ r̶a̶t̶i̶n̶g̶ t̶o̶ p̶o̶s̶t̶ m̶o̶d̶e̶l̶, t̶e̶s̶t̶ s̶t̶a̶n̶d̶a̶r̶d̶ i̶m̶a̶g̶e̶ s̶i̶z̶e̶ f̶o̶r̶ t̶h̶u̶m̶b̶n̶a̶i̶l̶,̶ d̶e̶p̶l̶o̶y̶ p̶r̶o̶j̶e̶c̶t̶
 
-## Extentions TODO
 ## version 1.4
 - Added interactive map to consolidate the location of all posts
 - Added Image gallery for each post (For excess images)
 - Updated models for Post (To accomodate new changes)
 - Updated Security settings
 
-- Search by Location around Sydney (Interactive map + search by geo tag)
-- Overall ranking of all restaurants visited (By score)
-- Image gallery under every post (For extra pictures that is out of context of post)
+## version 1.5 (First Release Version)
+- Added overall rankings of restaurants
+- This version is the base version used for release (includes all extensions and basic functionality!)
+- Security update
 
 ## SetUp
 - Spin up a fresh instance of aws ec2 instance and ssh into it
@@ -75,3 +75,4 @@ python3 manage.py runserver
 - Yes I realise that I leaked the SECRET_KEY in my past commits, and yes I have tried to remove it using bfg or git-filter, which to my detrement DID NOT WORK. Therefore, the project has been reconfigured with a new SECRET_KEY and the old SECRET_KEY will not compromise the security of the project.
 
 @Future_Employers &#10084; &#65039;
+

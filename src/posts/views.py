@@ -169,3 +169,29 @@ def map(request):
     }
 
     return render(request, 'map.html', context)
+
+def ranking(request):
+    # Sort by total score, in descending order
+    post_list = sorted(Post.objects.all().filter(announcement=False), key=lambda x: x.getTotalScore(), reverse=True)
+    latest_posts = Post.objects.order_by('-timestamp')[0:3]
+    cat_count = get_cat_count()
+    paginator = Paginator(post_list, 4)
+    page_request_var = 'page'
+    page = request.GET.get(page_request_var)
+
+    try:
+        paginated_queryset = paginator.page(page)
+    except PageNotAnInteger:
+        paginated_queryset = paginator.page(1)
+    except EmptyPage:
+        paginated_queryset = paginator.page(paginator.num_pages)
+
+
+    context = {
+        'queryset': paginated_queryset,
+        'page_request_var': page_request_var,
+        'latest_posts': latest_posts,
+        'cat_count': cat_count
+    }
+
+    return render(request, 'ranking.html', context)

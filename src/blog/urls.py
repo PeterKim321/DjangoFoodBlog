@@ -3,7 +3,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
-from posts.views import index, blog, post, search, category_search, contact, map
+from posts.views import index, blog, post, search, category_search, contact, map, ranking
 
 from decouple import config
 
@@ -16,6 +16,7 @@ urlpatterns = [
     path('category_search/', category_search, name = 'category_search'),
     path('contact/', contact, name='contact'),
     path('map/', map, name="map"),
+    path('ranking/', ranking, name="ranking"),
 
     path('tinymce/', include('tinymce.urls')),
     path('accounts/', include('allauth.urls')),
