@@ -195,3 +195,4 @@ def ranking(request):
     }
 
     return render(request, 'ranking.html', context)
+
