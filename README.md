@@ -45,6 +45,11 @@ Initial Release (Tutorial + bug fixes and minor url redirections)
 - This version is the base version used for release (includes all extensions and basic functionality!)
 - Security update
 
+## version 1.5.1
+- Map updated, now shows score
+- Added unique page titles
+- Small bug fix
+
 ## SetUp
 - Spin up a fresh instance of aws ec2 instance and ssh into it
 - create folder 'django' at ~
