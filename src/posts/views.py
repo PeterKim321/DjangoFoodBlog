@@ -157,7 +157,7 @@ def map(request):
 
     for post in loc_list:
         url_redir = post.post_url()
-        marker = folium.Html('<a href="{0}" target="_blank"> {1}</a>'.format(url_redir, post.restaurant_name), script=True)
+        marker = folium.Html('<a href="{0}" target="_blank"> {1} - Score: {2}</a>'.format(url_redir, post.restaurant_name, post.getTotalScore()), script=True)
         popup = folium.Popup(marker, max_width=2650)
         folium.Marker(location=[post.latitude, post.longitude], popup=popup).add_to(m)
     
